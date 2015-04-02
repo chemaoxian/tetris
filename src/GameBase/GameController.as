@@ -40,7 +40,8 @@ package GameBase
 			stopGame();
 			
 			this._gameInput.listenInput(this._scene.stage);
-		
+			this._gamePannel.linstenGameData();
+			
 			this._gameInput.addEventListener(GameInputEvent.KEY_UP, _onKeyUp);
 			this._scene.addEventListener(Event.ENTER_FRAME, this._onEnterFrame);
 			

@@ -69,6 +69,11 @@ package
 			return this._score;	
 		}
 		
+		public function getHighScore() : uint
+		{
+			return this._highScore;
+		}
+		
 		public function addScoreByRemoeRows(rowCnt:int) : void
 		{
 			var addScore:int = Const.LevelConst.REMOVE_ROW_SCORE[rowCnt];

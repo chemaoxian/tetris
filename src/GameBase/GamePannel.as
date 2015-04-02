@@ -26,9 +26,6 @@ package GameBase
 			this._initBackground();
 			this._initTexts();
 			
-			Game.getGameData().addEventListener(GameDataChangeEvent.SCORE_CHANGE, _onGameScoreChange);
-			Game.getGameData().addEventListener(GameDataChangeEvent.LEVEL_CHANGE, _onGameLevelChange);
-			Game.getGameData().addEventListener(GameDataChangeEvent.HIGHT_SCORE_CHANGE, _onGameHightScoreChange);
 			
 			this.addEventListener(Event.REMOVED_FROM_STAGE, function(e:Event):void{
 				Game.getGameData().removeEventListener(GameDataChangeEvent.SCORE_CHANGE, _onGameScoreChange);
@@ -36,6 +33,13 @@ package GameBase
 				Game.getGameData().removeEventListener(GameDataChangeEvent.HIGHT_SCORE_CHANGE, _onGameHightScoreChange);
 			});
 		} 
+		
+		public function linstenGameData() : void
+		{
+			Game.getGameData().addEventListener(GameDataChangeEvent.SCORE_CHANGE, _onGameScoreChange);
+			Game.getGameData().addEventListener(GameDataChangeEvent.LEVEL_CHANGE, _onGameLevelChange);
+			Game.getGameData().addEventListener(GameDataChangeEvent.HIGHT_SCORE_CHANGE, _onGameHightScoreChange);
+		}
 		
 		public function clear() : void
 		{
